@@ -137,4 +137,31 @@ p {
 */
 
 /* Taste the Bootstrap Button Color Rainbow */
+/*
+.red-text {
+    color: red;
+}
+
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+p {
+    font-size: 16px;
+    font-family: Monospace;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.smaller-image {
+    width: 100px;
+}
+*/
+
+/* Call out Optional Actions with btn-info */
 
