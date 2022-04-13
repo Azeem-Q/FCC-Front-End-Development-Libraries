@@ -164,4 +164,31 @@ p {
 */
 
 /* Call out Optional Actions with btn-info */
+/*
+.red-text {
+    color: red;
+}
+
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+p {
+    font-size: 16px;
+    font-family: Monospace;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.smaller-image {
+    width: 100px;
+}
+*/
+
+/* Warn Your Users of a Dangerous Action with btn-danger */
 
