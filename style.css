@@ -218,7 +218,7 @@ p {
 */
 
 /* Use the Bootstrap Grid to Put Elements Side By Side */
-
+/*
 .red-text {
     color: red;
 }
@@ -242,3 +242,20 @@ p {
 .smaller-image {
     width: 100px;
 }
+*/
+
+/* Ditch Custom CSS for Bootstrap */
+/*
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+}
+*/
+
+/* Use a span to Target Inline Elements */
