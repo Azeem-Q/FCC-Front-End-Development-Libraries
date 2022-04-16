@@ -273,4 +273,18 @@ h2 {
 */
 
 /* Create a Custom Heading */
+/*
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+}
+*/
+
+/* Add Font Awesome Icons to our Buttons */
 
