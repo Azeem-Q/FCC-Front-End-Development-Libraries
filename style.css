@@ -343,4 +343,18 @@ h2 {
 */
 
 /* Style Text Inputs as Form Controls */
+/*
+h2 {
+    font-family: Lobster, Monospace;
+}
+
+.thick-green-border {
+    border-color: green;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+}
+*/
+
+/* Line up Form Elements Responsively with Bootstrap */
 
