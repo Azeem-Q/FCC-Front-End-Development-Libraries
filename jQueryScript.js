@@ -47,4 +47,14 @@ $(document).ready(function() {
 */
 
 // Remove Classes from an Element with jQuery
+/*
+$(document).ready(function() {
+    $("button").addClass("animated");
+    $(".btn").addClass("shakeX");
+    $("#target1").addClass("btn-primary");
+    $("button").removeClass("btn-default");
+});
+*/
+
+// Change the CSS of an Element Using jQuery
 
