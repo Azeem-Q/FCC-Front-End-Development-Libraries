@@ -23,4 +23,28 @@ $(document).ready(function() {
 */
 
 // Target Elements by id Using jQuery
+/*
+$(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shakeX");
+    $("#target3").addClass("animated fadeOut");
+});
+*/
+
+// Delete Your jQuery Functions
+/*
+$(document).ready(function() {
+});
+*/
+
+// Target the Same Element with Multiple jQuery Selectors
+/*
+$(document).ready(function() {
+    $("button").addClass("animated");
+    $(".btn").addClass("shakeX");
+    $("#target1").addClass("btn-primary");
+});
+*/
+
+// Remove Classes from an Element with jQuery
 
