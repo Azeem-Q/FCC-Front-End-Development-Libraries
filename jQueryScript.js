@@ -15,4 +15,12 @@ $(document).ready(function() {
 */
 
 // Target Elements by Class Using jQuery
+/*
+$(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shakeX");
+});
+*/
+
+// Target Elements by id Using jQuery
 
