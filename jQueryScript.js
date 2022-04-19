@@ -73,3 +73,7 @@ $(document).ready(function() {
 
 // Change Text Inside an Element Using jQuery
 
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+});
