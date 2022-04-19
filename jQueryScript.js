@@ -57,4 +57,11 @@ $(document).ready(function() {
 */
 
 // Change the CSS of an Element Using jQuery
+/*
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+});
+*/
+
+// Disable an Element Using jQuery
 
