@@ -64,4 +64,12 @@ $(document).ready(function() {
 */
 
 // Disable an Element Using jQuery
+/*
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+});
+*/
+
+// Change Text Inside an Element Using jQuery
 
