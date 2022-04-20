@@ -72,8 +72,22 @@ $(document).ready(function() {
 */
 
 // Change Text Inside an Element Using jQuery
-
+/*
 $(document).ready(function() {
     $("#target1").css("color", "red");
     $("#target1").prop("disabled", true);
+    $("#target4").html("<em>#target4</em>")
 });
+*/
+
+// Remove an Element Using jQuery
+/*
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+});
+*/
+
+// Use appendTo to Move Elements with jQuery
+
