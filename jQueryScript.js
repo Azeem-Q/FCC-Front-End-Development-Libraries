@@ -100,4 +100,15 @@ $(document).ready(function() {
 */
 
 // Clone an Element Using jQuery
+/*
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+});
+*/
+
+// Target the Parent of an Element Using jQuery
 
