@@ -90,4 +90,14 @@ $(document).ready(function() {
 */
 
 // Use appendTo to Move Elements with jQuery
+/*
+$(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+});
+*/
+
+// Clone an Element Using jQuery
 
