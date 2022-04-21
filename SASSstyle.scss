@@ -12,4 +12,17 @@ $text-color: red;
 */
 
 // Nest CSS with Sass
+/*
+.blog-post {
+    h1 {
+        text-align: center;
+        color: blue;
+    }
+        p {
+            font-size: 20px;
+        }
+}
+*/
+
+// Create Reusable CSS with Mixins
 
