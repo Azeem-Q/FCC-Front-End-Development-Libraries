@@ -150,7 +150,7 @@ $(document).ready(function() {
 */
 
 // Target Even Elements Using jQuery
-
+/*
 $(document).ready(function() {
     $("#target1").css("color", "red");
     $("#target1").prop("disabled", true);
@@ -160,4 +160,9 @@ $(document).ready(function() {
     $("#target1").parent().css("background-color", "red");
     $("#right-well").children().css("color", "orange");
     $(".target:nth-child(2)").addClass("animated bounce");
+    $(".target:even").addClass("animated shakeX")
 });
+*/
+
+// Use jQuery to Modify the Entire Page
+
