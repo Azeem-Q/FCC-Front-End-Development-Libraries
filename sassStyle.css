@@ -1,0 +1,10 @@
+/* Store Data with Sass Variables */
+.header {
+  text-align: center;
+}
+
+.blog-post, h2 {
+  color: red;
+}
+
+/*# sourceMappingURL=sassStyle.css.map */
