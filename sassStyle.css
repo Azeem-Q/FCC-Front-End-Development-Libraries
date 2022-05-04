@@ -8,12 +8,25 @@ $text-color: red;
     color: $text-color;
 }
 */
-.blog-post h1 {
-  text-align: center;
-  color: blue;
+/*
+.blog-post {
+    h1 {
+        text-align: center;
+        color: blue;
+    }
+        p {
+            font-size: 20px;
+        }
 }
-.blog-post p {
-  font-size: 20px;
+*/
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=sassStyle.css.map */

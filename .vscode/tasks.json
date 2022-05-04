@@ -8,7 +8,8 @@
             "label": "Sass Compile",
             "type": "shell",
             "command": "sass SASSstyle.scss sassStyle.css",
-            "group": "build"
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }
