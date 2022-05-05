@@ -33,11 +33,46 @@ $text-color: red;
     @include border-radius(15px);
 }
 */
+/*
+@mixin border-stroke($val) {
+    @if $val == light {
+        border: 1px solid black;        
+    }
+    @else if $val == medium {
+        border: 3px solid black;
+    }
+    @else if $val == heavy {
+        border: 6px solid black;
+    }
+    @else {
+        border: none;
+    }
+}
 #box {
-  width: 150px;
-  height: 150px;
-  background-color: red;
-  border: 3px solid black;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+}
+*/
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
 }
 
 /*# sourceMappingURL=sassStyle.css.map */
