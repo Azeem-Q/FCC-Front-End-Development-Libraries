@@ -55,21 +55,30 @@ $text-color: red;
     @include border-stroke(medium);
 }
 */
-.blue-bg {
-  background-color: blue;
-}
-
-.black-bg {
-  background-color: black;
-}
-
-.red-bg {
-  background-color: red;
-}
-
+/*
 div {
-  height: 200px;
-  width: 200px;
+    height: 200px;
+    width: 200px;
+}
+*/
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
 }
 
 /*# sourceMappingURL=sassStyle.css.map */

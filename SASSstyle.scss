@@ -73,13 +73,13 @@ $text-color: red;
 
 
 // Use @each to Map Over Items in a List
+
+//$color-list: (blue, black, red);
+
+//@each $color in $color-list {
+  //  .#{'' + $color}-bg {background-color: $color;}   
+//}
 /*
-$color-list: (blue, black, red);
-
-@each $color in $color-list {
-    .#{'' + $color}-bg {background-color: $color;}   
-}
-
 div {
     height: 200px;
     width: 200px;
@@ -87,4 +87,13 @@ div {
 */
 
 // Apply a Style Until a Condition is Met with @while
+
+//$x: 1;
+
+//@while $x < 6 {
+  //  .text-#{$x} {font-size: 15px * $x;}
+    //$x: $x + 1;
+//}
+
+// Split Your Styles into Smaller Chunks with Partials
 
