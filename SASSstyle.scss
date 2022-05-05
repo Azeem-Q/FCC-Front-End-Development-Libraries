@@ -65,11 +65,26 @@ $text-color: red;
 */
 
 // Use @for to Create a Sass Loop
+//
+// @for $j from 1 to 6 {
+//    .text-#{$j} {font-size: 15px * $j;}
+//}
+
+
+
+// Use @each to Map Over Items in a List
 /*
-@for $j from 1 to 6 {
-    .text-#{$j} {font-size: 15px * $j;}
+$color-list: (blue, black, red);
+
+@each $color in $color-list {
+    .#{'' + $color}-bg {background-color: $color;}   
+}
+
+div {
+    height: 200px;
+    width: 200px;
 }
 */
 
-// Use @each to Map Over Items in a List
+// Apply a Style Until a Condition is Met with @while
 
