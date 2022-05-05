@@ -61,24 +61,18 @@ div {
     width: 200px;
 }
 */
-.text-1 {
-  font-size: 15px;
+h3 {
+  text-align: center;
 }
 
-.text-2 {
-  font-size: 30px;
+.info, .info-important {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
 }
 
-.text-3 {
-  font-size: 45px;
-}
-
-.text-4 {
-  font-size: 60px;
-}
-
-.text-5 {
-  font-size: 75px;
+.info-important {
+  background-color: magenta;
 }
 
 /*# sourceMappingURL=sassStyle.css.map */
