@@ -61,18 +61,19 @@ div {
     width: 200px;
 }
 */
+/*
 h3 {
-  text-align: center;
+    text-align: center;
 }
-
-.info, .info-important {
-  width: 200px;
-  border: 1px solid black;
-  margin: 0 auto;
+.info {
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
 }
-
 .info-important {
-  background-color: magenta;
+    @extend .info;
+    background-color: magenta;
 }
+*/
 
 /*# sourceMappingURL=sassStyle.css.map */
