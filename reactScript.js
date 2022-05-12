@@ -22,3 +22,15 @@ ReactDOM.render(JSX, document.getElementById('root'));
 */
 
 // Add Comments in JSX
+{/*
+    const JSX = (
+       <div>
+           */}{/*Sample React Code*/}
+{/*<h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+    </div>
+    );
+    ReactDOM.render(JSX, document.getElementById('root'));
+    */}
+
+{/* Render HTML Elements to the DOM */}
