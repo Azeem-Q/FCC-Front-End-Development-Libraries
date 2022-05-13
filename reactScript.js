@@ -70,3 +70,16 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Create a Stateless Functional Component*/}
+{/*
+    const MyComponent = function() {
+       return (
+           <div>
+               <p>This is a string</p>
+           </div>
+       )
+    }
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('root'));
+    */}
+
+{/*Create a React Component*/}
