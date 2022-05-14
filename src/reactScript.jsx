@@ -129,4 +129,119 @@ ReactDOM.render(<ParentComponent />, document.getElementById('root'));
 */}
 
 {/*Use React to Render Nested Components*/}
+{/*
+const TypesOfFruit = () => {
+    return (
+        <div>
+            <h2>Fruits:</h2>
+            <ul>
+                <li>Apples</li>
+                <li>Blueberries</li>
+                <li>Strawberries</li>
+                <li>Bananas</li>
+            </ul>
+        </div>
+    );
+};
+
+const Fruits = () => {
+    return (
+        <div>
+            <TypesOfFruit />
+        </div>
+    );
+};
+
+class TypesOfFood extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h1>Types of Food</h1>
+                <Fruits />
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<TypesOfFood />, document.getElementById('root'));
+*/}
+
+{/*Compose React Components*/}
+{/*
+const Citrus = () => {
+    return (
+        <div>
+            <h3>Citrus:</h3>
+            <ul>
+                <li>Lemon</li>
+                <li>Lime</li>
+                <li>Orange</li>
+                <li>Grapefruit</li>
+            </ul>
+        </div>
+    );
+};
+
+const NonCitrus = () => {
+    return (
+        <div>
+            <h3>Non-Citrus:</h3>
+            <ul>
+                <li>Apples</li>
+                <li>Blueberries</li>
+                <li>Strawberries</li>
+                <li>Bananas</li>
+            </ul>
+        </div>
+    );
+};
+
+class Fruits extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h2>Fruits:</h2>
+                <Citrus />
+                <NonCitrus />
+            </div>
+        );
+    }
+};
+
+const Vegetables = () => {
+    return (
+        <div>
+            <h2>Vegetables:</h2>
+            <ul>
+                <li>Brussel Sprouts</li>
+                <li>Broccoli</li>
+                <li>Squash</li>
+            </ul>
+        </div>
+    );
+};
+
+class TypesOfFood extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render () {
+        return (
+            <div>
+                <h1>Types of Food:</h1>
+                <Fruits />
+                <Vegetables />
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<TypesOfFood />, document.getElementById('root'));
+*/}
 
