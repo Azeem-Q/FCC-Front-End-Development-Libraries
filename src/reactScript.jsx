@@ -245,3 +245,98 @@ class TypesOfFood extends React.Component {
 ReactDOM.render(<TypesOfFood />, document.getElementById('root'));
 */}
 
+{/*Render a Class Component to the DOM*/}
+{/*
+const Citrus = () => {
+    return (
+        <div>
+            <h3>Citrus:</h3>
+            <ul>
+                <li>Lemon</li>
+                <li>Lime</li>
+                <li>Orange</li>
+                <li>Grapefruit</li>
+            </ul>
+        </div>
+    );
+};
+
+const NonCitrus = () => {
+    return (
+        <div>
+            <h3>Non-Citrus:</h3>
+            <ul>
+                <li>Apples</li>
+                <li>Blueberries</li>
+                <li>Strawberries</li>
+                <li>Bananas</li>
+            </ul>
+        </div>
+    );
+};
+
+class Fruits extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h2>Fruits:</h2>
+                <Citrus />
+                <NonCitrus />
+            </div>
+        );
+    }
+};
+
+const Vegetables = () => {
+    return (
+        <div>
+            <h2>Vegetables:</h2>
+            <ul>
+                <li>Brussel Sprouts</li>
+                <li>Broccoli</li>
+                <li>Squash</li>
+            </ul>
+        </div>
+    );
+};
+class TypesOfFood extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h1>Types of Food:</h1>
+                <Fruits />
+                <Vegetables />
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))
+*/}
+
+{/*Write a React Component from Scratch*/}
+{/*
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <h1>My First React Component!</h1>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+*/}
+
+{/*Pass Props to a Stateless Functional Component*/}
+
