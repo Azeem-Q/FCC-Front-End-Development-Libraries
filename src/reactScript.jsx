@@ -366,9 +366,9 @@ ReactDOM.render(<Calender />, document.getElementById('challenge-node'));
 */}
 
 {/*Pass an Array as Props*/}
-
+{/*
 const List = (props) => {
-    return <p>{}</p>
+    return <p>{props.tasks.join(', ')}</p>
 };
 
 class ToDo extends React.Component {
@@ -380,12 +380,55 @@ class ToDo extends React.Component {
             <div>
                 <h1>To Do Lists</h1>
                 <h2>Today</h2>
-                <List />
+                <List tasks={['Go to gym', 'Grocery shopping', 'Pay bills']}/>
                 <h2>Tomorrow</h2>
-                <List />
+                <List tasks={['Doctor\'s appointment', 'Go to gym', 'Go to bank']}/>
             </div>
         );
     }
 };
 
 ReactDOM.render(<ToDo />, document.getElementById('challenge-node'));
+*/}
+
+{/*Use Default Props*/}
+{/*
+const ShoppingCart = (props) => {
+    return (
+        <div>
+            <h1>Shopping Cart Component {props.items}</h1>
+        </div>
+    )
+};
+
+ShoppingCart.defaultProps = {
+    items: 0
+}
+
+ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
+*/}
+
+{/*Override Default Props*/}
+{/*
+const Items = (props) => {
+    return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+}
+
+Items.defaultProps = {
+    quantity: 0
+}
+
+class ShoppingCart extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <Items quantity={10}/>
+    }
+};
+
+ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
+*/}
+
+{/*Use PropTypes to Define the Props You Expect*/}
+

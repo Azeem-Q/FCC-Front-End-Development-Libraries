@@ -1,11 +1,3 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // Create a Simple JSX Element
 /*
 const JSX = <h1>Hello JSX!</h1>;
@@ -373,50 +365,68 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Pass an Array as Props*/}
+{/*
+    const List = (props) => {
+       return <p>{props.tasks.join(', ')}</p>
+    };
+    
+    class ToDo extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       render() {
+           return (
+               <div>
+                   <h1>To Do Lists</h1>
+                   <h2>Today</h2>
+                   <List tasks={['Go to gym', 'Grocery shopping', 'Pay bills']}/>
+                   <h2>Tomorrow</h2>
+                   <List tasks={['Doctor\'s appointment', 'Go to gym', 'Go to bank']}/>
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<ToDo />, document.getElementById('challenge-node'));
+    */}
 
-var List = function List(props) {
-    return React.createElement('p', null);
-};
-
-var ToDo = function (_React$Component) {
-    _inherits(ToDo, _React$Component);
-
-    function ToDo(props) {
-        _classCallCheck(this, ToDo);
-
-        return _possibleConstructorReturn(this, (ToDo.__proto__ || Object.getPrototypeOf(ToDo)).call(this, props));
+{/*Use Default Props*/}
+{/*
+    const ShoppingCart = (props) => {
+       return (
+           <div>
+               <h1>Shopping Cart Component {props.items}</h1>
+           </div>
+       )
+    };
+    
+    ShoppingCart.defaultProps = {
+       items: 0
     }
+    
+    ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
+    */}
 
-    _createClass(ToDo, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'h1',
-                    null,
-                    'To Do Lists'
-                ),
-                React.createElement(
-                    'h2',
-                    null,
-                    'Today'
-                ),
-                React.createElement(List, null),
-                React.createElement(
-                    'h2',
-                    null,
-                    'Tomorrow'
-                ),
-                React.createElement(List, null)
-            );
-        }
-    }]);
+{/*Override Default Props*/}
+{/*
+    const Items = (props) => {
+       return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+    }
+    
+    Items.defaultProps = {
+       quantity: 0
+    }
+    
+    class ShoppingCart extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       render() {
+           return <Items quantity={10}/>
+       }
+    };
+    
+    ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
+    */}
 
-    return ToDo;
-}(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(ToDo, null), document.getElementById('challenge-node'));
+{/*Use PropTypes to Define the Props You Expect*/}
