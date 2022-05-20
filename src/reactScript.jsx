@@ -432,3 +432,26 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
 
 {/*Use PropTypes to Define the Props You Expect*/}
 
+//import PropTypes from 'prop-types'
+const { createElement: PropTypes } = PropTypes;
+
+const Items = (props) => {
+    return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+};
+
+Items.defaultProps = {
+    quantity: 0
+};
+
+Items.propTypes = {quantity: PropTypes.number.isRequired}
+
+class ShoppingCart extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <Items />
+    }
+};
+
+ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
