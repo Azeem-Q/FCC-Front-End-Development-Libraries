@@ -459,4 +459,70 @@ ReactDOM.render(<ShoppingCart />, document.getElementById('challenge-node'));
 */}
 
 {/*Access Props Using this.props*/}
+{/*
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <Welcome name="Azeem"/>
+            </div>
+        );
+    }
+};
+
+class Welcome extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <p>Hello, <strong>{this.props.name}</strong>!</p>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<App />, document.getElementById('challenge-node'));
+*/}
+
+{/*Review Using Props with Stateless Functional Components*/}
+{/*
+class CampSite extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div>
+                <Camper />
+            </div>
+        );
+    }
+};
+
+const Camper = (props) => {
+    return (
+        <div>
+            <h1>Camper Info</h1>
+            <p>{props.name}</p>
+        </div>
+    )
+}
+
+Camper.defaultProps = {
+    name: 'CamperBot'
+}
+
+Camper.propTypes = {
+    name: PropTypes.string.isRequired
+}
+
+ReactDOM.render(<CampSite />, document.getElementById('challenge-node'));
+*/}
+
+{/*Create a Stateful Component*/}
 
