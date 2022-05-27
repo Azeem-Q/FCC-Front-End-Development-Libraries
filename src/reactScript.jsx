@@ -617,13 +617,14 @@ ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
 */}
 
 {/*Bind 'this' to a Class Method*/}
-
+{/*
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             text: 'Hello'
         };
+        this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
         this.setState({
@@ -633,9 +634,47 @@ class MyComponent extends React.Component {
     render() {
         return (
             <div>
-                <button>Click Me</button>
+                <button onClick={this.handleClick}>Click Me</button>
                 <h1>{this.state.text}</h1>
             </div>
         );
     }
 };
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+*/}
+
+{/*Use State to Toggle an Element*/}
+
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visibility: false
+        };
+        this.toggleVisibility = this.toggleVisibility.bind(this);
+    }
+    toggleVisibility() {
+        this.setState(state => {
+            
+        });
+    }
+    render() {
+        if(this.state.visibility) {
+            return (
+                <div>
+                    <button onClick={this.toggleVisibility}>Click Me</button>
+                    <h1>Now you see me!</h1>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <button onClick={this.toggleVisibility}>Click Me</button>
+                </div>
+            );
+        }
+    }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));

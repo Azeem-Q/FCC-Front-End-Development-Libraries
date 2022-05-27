@@ -624,6 +624,34 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Bind 'this' to a Class Method*/}
+{/*
+    class MyComponent extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               text: 'Hello'
+           };
+           this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick() {
+           this.setState({
+               text: 'You clicked!'
+           });
+       }
+       render() {
+           return (
+               <div>
+                   <button onClick={this.handleClick}>Click Me</button>
+                   <h1>{this.state.text}</h1>
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+    */}
+
+{/*Use State to Toggle an Element*/}
 
 var MyComponent = function (_React$Component) {
     _inherits(MyComponent, _React$Component);
@@ -634,39 +662,50 @@ var MyComponent = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (MyComponent.__proto__ || Object.getPrototypeOf(MyComponent)).call(this, props));
 
         _this.state = {
-            text: 'Hello'
+            visibility: false
         };
+        _this.toggleVisibility = _this.toggleVisibility.bind(_this);
         return _this;
     }
 
     _createClass(MyComponent, [{
-        key: 'handleClick',
-        value: function handleClick() {
-            this.setState({
-                text: 'You clicked!'
-            });
+        key: 'toggleVisibility',
+        value: function toggleVisibility() {
+            this.setState(function (state) {});
         }
     }, {
         key: 'render',
         value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'button',
+            if (this.state.visibility) {
+                return React.createElement(
+                    'div',
                     null,
-                    'Click Me'
-                ),
-                React.createElement(
-                    'h1',
+                    React.createElement(
+                        'button',
+                        { onClick: this.toggleVisibility },
+                        'Click Me'
+                    ),
+                    React.createElement(
+                        'h1',
+                        null,
+                        'Now you see me!'
+                    )
+                );
+            } else {
+                return React.createElement(
+                    'div',
                     null,
-                    this.state.text
-                )
-            );
+                    React.createElement(
+                        'button',
+                        { onClick: this.toggleVisibility },
+                        'Click Me'
+                    )
+                );
+            }
         }
     }]);
 
     return MyComponent;
 }(React.Component);
 
-;
+ReactDOM.render(React.createElement(MyComponent, null), document.getElementById('challenge-node'));
