@@ -724,3 +724,24 @@ ReactDOM.render(<Counter />, document.getElementById('challenge-node'));
 
 {/*Create a Controlled Input*/}
 
+class ControlledInput extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+    }
+    render() {
+        return (
+            <div>
+                <h4>Controlled Input:</h4>
+                <p>{this.state.input}</p>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<ControlledInput />, document.getElementById('challenge-node'));
