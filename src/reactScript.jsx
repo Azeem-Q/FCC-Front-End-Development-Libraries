@@ -645,7 +645,7 @@ ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
 */}
 
 {/*Use State to Toggle an Element*/}
-
+{/*
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -655,9 +655,9 @@ class MyComponent extends React.Component {
         this.toggleVisibility = this.toggleVisibility.bind(this);
     }
     toggleVisibility() {
-        this.setState(state => {
-            
-        });
+        this.setState(state => ({
+            visibility: !state.visibility
+        }));
     }
     render() {
         if(this.state.visibility) {
@@ -678,3 +678,7 @@ class MyComponent extends React.Component {
 }
 
 ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+*/}
+
+{/*Write a Simple Counter*/}
+
