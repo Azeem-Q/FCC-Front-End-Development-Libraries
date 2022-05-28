@@ -730,25 +730,63 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Create a Controlled Input*/}
+{/*
+    class ControlledInput extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               input: ''
+           };
+           this.handleChange = this.handleChange.bind(this);
+       }
+       handleChange(event) {
+           this.setState(state => ({
+               input: event.target.value
+           }));
+       }
+       render() {
+           return (
+               <div>
+                   <input type="text" value={this.state.input} onChange={this.handleChange}/>
+                   <h4>Controlled Input:</h4>
+                   <p>{this.state.input}</p>
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<ControlledInput />, document.getElementById('challenge-node'));
+    */}
 
-var ControlledInput = function (_React$Component) {
-    _inherits(ControlledInput, _React$Component);
+{/*Create a Controlled Form*/}
 
-    function ControlledInput(props) {
-        _classCallCheck(this, ControlledInput);
+var MyForm = function (_React$Component) {
+    _inherits(MyForm, _React$Component);
 
-        var _this = _possibleConstructorReturn(this, (ControlledInput.__proto__ || Object.getPrototypeOf(ControlledInput)).call(this, props));
+    function MyForm(props) {
+        _classCallCheck(this, MyForm);
+
+        var _this = _possibleConstructorReturn(this, (MyForm.__proto__ || Object.getPrototypeOf(MyForm)).call(this, props));
 
         _this.state = {
-            input: ''
+            input: '',
+            submit: ''
         };
         _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
     }
 
-    _createClass(ControlledInput, [{
+    _createClass(MyForm, [{
         key: 'handleChange',
-        value: function handleChange(event) {}
+        value: function handleChange(event) {
+            this.setState({
+                input: event.target.value
+            });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {}
     }, {
         key: 'render',
         value: function render() {
@@ -756,22 +794,22 @@ var ControlledInput = function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'h4',
-                    null,
-                    'Controlled Input:'
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    this.state.input
+                    'form',
+                    { onSubmit: this.handleSubmit },
+                    React.createElement('input', { type: 'text', value: this.state.input, onChange: this.handleChange }),
+                    React.createElement(
+                        'button',
+                        { type: 'submit' },
+                        'Submit!'
+                    )
                 )
             );
         }
     }]);
 
-    return ControlledInput;
+    return MyForm;
 }(React.Component);
 
 ;
 
-ReactDOM.render(React.createElement(ControlledInput, null), document.getElementById('challenge-node'));
+ReactDOM.render(React.createElement(MyForm, null), document.getElementById('challenge-node'));
