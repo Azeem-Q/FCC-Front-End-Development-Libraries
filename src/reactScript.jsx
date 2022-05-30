@@ -828,3 +828,17 @@ ReactDOM.render(<MyApp />, document.getElementById('challenge-node'));
 
 {/*Pass a Callback as Props*/}
 
+class MyApp extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputValue: ''
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(event) {
+        this.setState({
+            inputValue: event.target.value
+        })
+    }
+}
