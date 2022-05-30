@@ -752,7 +752,7 @@ ReactDOM.render(<ControlledInput />, document.getElementById('challenge-node'));
 */}
 
 {/*Create a Controlled Form*/}
-
+{/*
 class MyForm extends React.Component {
     constructor(props) {
         super(props);
@@ -769,7 +769,11 @@ class MyForm extends React.Component {
         });
     }
     handleSubmit(event) {
-        
+        event.preventDefault()
+        this.setState(state => ({
+            submit: state.input,
+            input: ''
+        }));
     }
     render() {
         return (
@@ -778,9 +782,14 @@ class MyForm extends React.Component {
                     <input type="text" value={this.state.input} onChange={this.handleChange}/>
                     <button type="submit">Submit!</button>
                 </form>
+                <h1>{this.state.submit}</h1>
             </div>
         );
     }
 };
 
 ReactDOM.render(<MyForm />, document.getElementById('challenge-node'));
+*/}
+
+{/*Pass State as Props to Child Components*/}
+
