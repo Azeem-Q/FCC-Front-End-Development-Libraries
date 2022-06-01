@@ -1016,3 +1016,22 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Introducing Inline Styles*/}
+{/*
+    class Colorful extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       render() {
+           return (
+               <div style={{
+                   color: 'red',
+                   fontSize: 72
+               }}>Big Red</div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<Colorful />, document.getElementById('challenge-node'));
+    */}
+
+{/*Add Inline Styles in React*/}
