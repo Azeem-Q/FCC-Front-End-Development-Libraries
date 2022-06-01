@@ -882,3 +882,20 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Use the Lifecycle Method componentWillMount*/}
+{/*
+    class MyComponent extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       componentWillMount() {
+           console.log('mount');
+       }
+       render() {
+           return <div />
+       }
+    };
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+    */}
+
+{/*Use the Lifecycle Method componentDidMount*/}
