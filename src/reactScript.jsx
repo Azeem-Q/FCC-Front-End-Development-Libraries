@@ -1058,7 +1058,7 @@ ReactDOM.render(<Colorful />, document.getElementById('challenge-node'))
 */}
 
 {/*Use Advanced JavaScript in React Render Method*/}
-
+{/*
 const inputStyle = {
     width: 235,
     margin: 5
@@ -1120,10 +1120,14 @@ class MagicEightBall extends React.Component {
                 <button onClick={this.ask}>Ask the Magic Eight Ball!</button>
                 <br />
                 <h3>Answer:</h3>
-                <p></p>
+                <p>{answer}</p>
             </div>
         );
     }
 };
 
 ReactDOM.render(<MagicEightBall />, document.getElementById('challenge-node'));
+*/}
+
+{/*Render with an If-Else Condition*/}
+
