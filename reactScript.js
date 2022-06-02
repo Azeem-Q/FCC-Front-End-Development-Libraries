@@ -1110,7 +1110,7 @@ var MagicEightBall = function (_React$Component) {
         value: function render() {
             var possibleAnswers = ['It is certain', 'It is decidedly so', 'Whithout a doubt', 'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Outlook good', 'Yes', 'Signs point to yes', 'Reply hazy try again', 'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again', "Don't count on it", 'My reply is no', 'My sources say no', 'Most likely', 'Outlook not so good', 'Very doubtful'];
 
-            var answer = possibleAnswers[randomIndex];
+            var answer = possibleAnswers[this.state.randomIndex];
 
             return React.createElement(
                 'div',

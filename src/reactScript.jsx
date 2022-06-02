@@ -1111,7 +1111,7 @@ class MagicEightBall extends React.Component {
             'Very doubtful'
         ];
         
-        const answer = possibleAnswers[randomIndex];
+        const answer = possibleAnswers[this.state.randomIndex];
         
         return (
             <div>
