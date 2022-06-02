@@ -1036,4 +1036,25 @@ ReactDOM.render(<Colorful />, document.getElementById('challenge-node'));
 */}
 
 {/*Add Inline Styles in React*/}
+{/*
+let styles = {
+    color: 'purple',
+    fontSize: 40,
+    border: '2px solid purple'
+}
+class Colorful extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div style={styles}>Style Me!</div>
+        );
+    }
+};
+
+ReactDOM.render(<Colorful />, document.getElementById('challenge-node'))
+*/}
+
+{/*Use Advanced JavaScript in React Render Method*/}
 
