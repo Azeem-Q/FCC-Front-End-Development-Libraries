@@ -1,10 +1,20 @@
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 // Create a Simple JSX Element
 /*
 const JSX = <h1>Hello JSX!</h1>;
 
 ReactDOM.render(JSX, document.getElementById('root'));
 */
-
+{} /*
+   const { number } = require("prop-types");
+   */
 // Create a Complex JSX Element
 /*
 const JSX = 
@@ -1193,3 +1203,120 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Use a Ternary Expression for Conditional Rendering*/}
+{/*
+    const inputStyle = {
+       width: 235,
+       margin: 5
+    };
+    
+    class CheckUserAge extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               input: '',
+               userAge: ''
+           };
+           this.submit = this.submit.bind(this);
+           this.handleChange = this.handleChange.bind(this);
+       }
+       handleChange(e) {
+           this.setState({
+               input: e.target.value,
+               userAge: ''
+           });
+       }
+       submit() {
+           this.setState(state => ({
+               userAge: state.input
+           }));
+       }
+       render() {
+           const buttonOne = <button onClick={this.submit}>Submit</button>;
+           const buttonTwo = <button>You May Enter</button>;
+           const buttonThree = <button>You Shall Not Pass</button>;
+           return (
+               <div>
+                   <h3>Enter Your Age to Continue</h3>
+                   <input type="number" style={inputStyle} value={this.state.input} onChange={this.handleChange} />
+                   <br />
+                   {this.state.userAge == '' ? buttonOne : this.state.userAge >= 18 ? buttonTwo : buttonThree}
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<CheckUserAge />, document.getElementById('challenge-node'));
+    */}
+
+{/*Render Conditionally from Props*/}
+
+var Results = function (_React$Component) {
+    _inherits(Results, _React$Component);
+
+    function Results(props) {
+        _classCallCheck(this, Results);
+
+        return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+    }
+
+    _createClass(Results, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement('h1', null);
+        }
+    }]);
+
+    return Results;
+}(React.Component);
+
+var GameOfChance = function (_React$Component2) {
+    _inherits(GameOfChance, _React$Component2);
+
+    function GameOfChance(props) {
+        _classCallCheck(this, GameOfChance);
+
+        var _this2 = _possibleConstructorReturn(this, (GameOfChance.__proto__ || Object.getPrototypeOf(GameOfChance)).call(this, props));
+
+        _this2.state = {
+            counter: 1
+        };
+        _this2.handleClick = _this2.handleClick.bind(_this2);
+        return _this2;
+    }
+
+    _createClass(GameOfChance, [{
+        key: 'handleClick',
+        value: function handleClick() {
+            this.setState(function (prevState) {
+                return {
+                    counter: prevState
+                };
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var expression = null;
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'button',
+                    { onClick: this.handleClick },
+                    'Play Again'
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    'Turn: ' + this.state.counter
+                )
+            );
+        }
+    }]);
+
+    return GameOfChance;
+}(React.Component);
+
+;
+
+ReactDOM.render();
