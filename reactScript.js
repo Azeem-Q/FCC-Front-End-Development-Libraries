@@ -1,11 +1,3 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // Create a Simple JSX Element
 /*
 const JSX = <h1>Hello JSX!</h1>;
@@ -1249,74 +1241,48 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Render Conditionally from Props*/}
-
-var Results = function (_React$Component) {
-    _inherits(Results, _React$Component);
-
-    function Results(props) {
-        _classCallCheck(this, Results);
-
-        return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+{/*
+    class Results extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       render() {
+           return (
+               <h1>
+                   {this.props.fiftyFifty >= .5 ? 'You Win!' : 'You Lose!'}
+               </h1>
+           )
+       }
     }
+    
+    class GameOfChance extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               counter: 1
+           };
+           this.handleClick = this.handleClick.bind(this);
+       }
+       handleClick() {
+           this.setState(prevState => {
+               return {
+                   counter: prevState.counter + 1
+               }
+           });
+       }
+       render() {
+           const expression = Math.random();
+           return (
+               <div>
+                   <button onClick={this.handleClick}>Play Again</button>
+                   <p>{'Turn: ' + this.state.counter}</p>
+                   <Results fiftyFifty={expression}/>
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<GameOfChance />, document.getElementById('challenge-node'));
+    */}
 
-    _createClass(Results, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement('h1', null);
-        }
-    }]);
-
-    return Results;
-}(React.Component);
-
-var GameOfChance = function (_React$Component2) {
-    _inherits(GameOfChance, _React$Component2);
-
-    function GameOfChance(props) {
-        _classCallCheck(this, GameOfChance);
-
-        var _this2 = _possibleConstructorReturn(this, (GameOfChance.__proto__ || Object.getPrototypeOf(GameOfChance)).call(this, props));
-
-        _this2.state = {
-            counter: 1
-        };
-        _this2.handleClick = _this2.handleClick.bind(_this2);
-        return _this2;
-    }
-
-    _createClass(GameOfChance, [{
-        key: 'handleClick',
-        value: function handleClick() {
-            this.setState(function (prevState) {
-                return {
-                    counter: prevState
-                };
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var expression = null;
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'button',
-                    { onClick: this.handleClick },
-                    'Play Again'
-                ),
-                React.createElement(
-                    'p',
-                    null,
-                    'Turn: ' + this.state.counter
-                )
-            );
-        }
-    }]);
-
-    return GameOfChance;
-}(React.Component);
-
-;
-
-ReactDOM.render();
+{/*Change Inline CSS Conditionally Based on Component State*/}

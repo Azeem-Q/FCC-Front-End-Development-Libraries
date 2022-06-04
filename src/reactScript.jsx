@@ -1242,13 +1242,17 @@ ReactDOM.render(<CheckUserAge />, document.getElementById('challenge-node'));
 */}
 
 {/*Render Conditionally from Props*/}
-
+{/*
 class Results extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
-        return <h1></h1>
+        return (
+            <h1>
+                {this.props.fiftyFifty >= .5 ? 'You Win!' : 'You Lose!'}
+            </h1>
+        )
     }
 }
 
@@ -1263,19 +1267,24 @@ class GameOfChance extends React.Component {
     handleClick() {
         this.setState(prevState => {
             return {
-                counter: prevState
+                counter: prevState.counter + 1
             }
         });
     }
     render() {
-        const expression = null;
+        const expression = Math.random();
         return (
             <div>
                 <button onClick={this.handleClick}>Play Again</button>
                 <p>{'Turn: ' + this.state.counter}</p>
+                <Results fiftyFifty={expression}/>
             </div>
         );
     }
 };
 
-ReactDOM.render()
+ReactDOM.render(<GameOfChance />, document.getElementById('challenge-node'));
+*/}
+
+{/*Change Inline CSS Conditionally Based on Component State*/}
+
