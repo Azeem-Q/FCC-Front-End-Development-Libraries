@@ -1,11 +1,3 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 // Create a Simple JSX Element
 /*
 const JSX = <h1>Hello JSX!</h1>;
@@ -1294,54 +1286,37 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Change Inline CSS Conditionally Based on Component State*/}
+{/*
+    class GateKeeper extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               input: ''
+           };
+           this.handleChange = this.handleChange.bind(this);
+       }
+       handleChange(event) {
+           this.setState({
+               input: event.target.value
+           })
+       }
+       render() {
+           let inputStyle = {
+               border: '1px solid black'
+           };
+           let inputError = {
+               border: '3px solid red'
+           }
+           return (
+               <div>
+                   <h3>Don't Type Too Much:</h3>
+                   <input type="text" style={this.state.input.length > 15 ? inputError : inputStyle} value={this.state.input} onChange={this.handleChange} />
+               </div>
+           );
+       }
+    };
+    
+    ReactDOM.render(<GateKeeper />, document.getElementById('challenge-node'));
+    */}
 
-var GateKeeper = function (_React$Component) {
-    _inherits(GateKeeper, _React$Component);
-
-    function GateKeeper(props) {
-        _classCallCheck(this, GateKeeper);
-
-        var _this = _possibleConstructorReturn(this, (GateKeeper.__proto__ || Object.getPrototypeOf(GateKeeper)).call(this, props));
-
-        _this.state = {
-            input: ''
-        };
-        _this.handleChange = _this.handleChange.bind(_this);
-        return _this;
-    }
-
-    _createClass(GateKeeper, [{
-        key: 'handleChange',
-        value: function handleChange(event) {
-            this.setState({
-                input: event.target.value
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var inputStyle = {
-                border: '1px solid black'
-            };
-            var inputError = {
-                border: '3px solid red'
-            };
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'h3',
-                    null,
-                    'Don\'t Type Too Much:'
-                ),
-                React.createElement('input', Object.assign({ type: 'text' }, this.state.input.length > 15 ? style = { inputError: inputError } : style = { inputStyle: inputStyle }, { value: this.state.input, onChange: this.handleChange }))
-            );
-        }
-    }]);
-
-    return GateKeeper;
-}(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(GateKeeper, null), document.getElementById('challenge-node'));
+{/*Use Array.map() to Dynamically Render Elements*/}

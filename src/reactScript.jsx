@@ -1287,7 +1287,7 @@ ReactDOM.render(<GameOfChance />, document.getElementById('challenge-node'));
 */}
 
 {/*Change Inline CSS Conditionally Based on Component State*/}
-
+{/*
 class GateKeeper extends React.Component {
     constructor(props) {
         super(props);
@@ -1311,10 +1311,14 @@ class GateKeeper extends React.Component {
         return (
             <div>
                 <h3>Don't Type Too Much:</h3>
-                <input type="text" {...this.state.input.length > 15 ? style={inputError} : style={inputStyle}} value={this.state.input} onChange={this.handleChange} />
+                <input type="text" style={this.state.input.length > 15 ? inputError : inputStyle} value={this.state.input} onChange={this.handleChange} />
             </div>
         );
     }
 };
 
 ReactDOM.render(<GateKeeper />, document.getElementById('challenge-node'));
+*/}
+
+{/*Use Array.map() to Dynamically Render Elements*/}
+
