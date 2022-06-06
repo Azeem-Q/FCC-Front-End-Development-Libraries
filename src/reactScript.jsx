@@ -1321,4 +1321,74 @@ ReactDOM.render(<GateKeeper />, document.getElementById('challenge-node'));
 */}
 
 {/*Use Array.map() to Dynamically Render Elements*/}
+{/*
+const textAreaStyles = {
+    width: 235,
+    margin: 5
+};
+
+class MyToDoList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userInput: '',
+            toDoList: []
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleSubmit() {
+        const itemsArray = this.state.userInput.split(',');
+        this.setState({
+            toDoList: itemsArray
+        });
+    }
+    handleChange(e) {
+        this.setState({
+            userInput: e.target.value
+        });
+    }
+    render() {
+        const items = this.state.toDoList.map(i => <li>{i}</li>);
+        console.log(items);
+        return (
+            <div>
+                <textarea onChange={this.handleChange} value={this.state.userInput} style={textAreaStyles} placeholder='Seperate Items With Commas' />
+                <br />
+                <button onClick={this.handleSubmit}>Create List</button>
+                <h1>My "To Do" List:</h1>
+                <ul>{items}</ul>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<MyToDoList />, document.getElementById('challenge-node'));
+*/}
+
+{/*Give Sibling Elements a Unique Key Attribute*/}
+{/*
+const frontEndFrameworks = [
+    'React',
+    'Angular',
+    'Ember',
+    'Knockout',
+    'Backbone',
+    'Vue'
+];
+
+function Frameworks() {
+    const renderFrameworks = frontEndFrameworks.map(f => <li key={f}>{f}</li>);
+    return (
+        <div>
+            <h1>Popular Front End JavaScript Frameworks</h1>
+            <ul>{renderFrameworks}</ul>
+        </div>
+    );
+};
+
+ReactDOM.render(<Frameworks />, document.getElementById('challenge-node'));
+*/}
+
+{/*Use Array.filter() to Dynamically Filter an Array*/}
 
