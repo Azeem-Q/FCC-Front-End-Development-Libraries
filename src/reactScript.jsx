@@ -1391,4 +1391,53 @@ ReactDOM.render(<Frameworks />, document.getElementById('challenge-node'));
 */}
 
 {/*Use Array.filter() to Dynamically Filter an Array*/}
+{/*
+class MyComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: [
+                {
+                    username: 'Jeff',
+                    online: true
+                },
+                {
+                    username: 'Alan',
+                    online: false
+                },
+                {
+                    username: 'Mary',
+                    online: true
+                },
+                {
+                    username: 'Jim',
+                    online: false
+                },
+                {
+                    username: 'Sara',
+                    online: true
+                },
+                {
+                    username: 'Laura',
+                    online: true
+                }
+            ]
+        };
+    }
+    render() {
+        const usersOnline = this.state.users.filter(user => user.online == true);
+        const renderOnline = usersOnline.map(user => <li key={user.username}>{user.username}</li>);
+        return (
+            <div>
+                <h1>Current Online Users:</h1>
+                <ul>{renderOnline}</ul>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+*/}
+
+{/*Render React on the Server with renderToString*/}
 
