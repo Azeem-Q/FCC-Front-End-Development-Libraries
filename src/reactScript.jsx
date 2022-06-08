@@ -1,4 +1,7 @@
 // Create a Simple JSX Element
+
+const { bindActionCreators } = require("redux")
+
 /*
 const JSX = <h1>Hello JSX!</h1>;
 
@@ -1476,4 +1479,22 @@ console.log(currentState);
 */}
 
 {/*Define a Redux Action*/}
+{/*
+let action = {
+    type: 'LOGIN'
+};
+*/}
+
+{/*Define an Action Creator*/}
+{/*
+const action = {
+    type: 'LOGIN'
+}
+
+function actionCreator() {
+    return action;
+}
+*/}
+
+{/*Dispatch an Action Event*/}
 

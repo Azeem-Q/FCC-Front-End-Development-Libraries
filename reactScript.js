@@ -1,9 +1,15 @@
 // Create a Simple JSX Element
+
+var _require = require("redux"),
+    bindActionCreators = _require.bindActionCreators;
+
 /*
 const JSX = <h1>Hello JSX!</h1>;
 
 ReactDOM.render(JSX, document.getElementById('root'));
 */
+
+
 {} /*
    const { number } = require("prop-types");
    */
@@ -1475,3 +1481,21 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Define a Redux Action*/}
+{/*
+    let action = {
+       type: 'LOGIN'
+    };
+    */}
+
+{/*Define an Action Creator*/}
+{/*
+    const action = {
+       type: 'LOGIN'
+    }
+    
+    function actionCreator() {
+       return action;
+    }
+    */}
+
+{/*Dispatch an Action Event*/}
