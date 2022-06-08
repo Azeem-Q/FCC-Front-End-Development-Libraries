@@ -1512,4 +1512,34 @@ store.dispatch(loginAction());
 */}
 
 {/*Handle an Action in the Store*/}
+{/*
+const defaultState = {
+    login: false
+};
+
+const reducer = (state = defaultState, action) => {
+    if (action.type == 'LOGIN') {
+        return {
+            login: true
+        };
+    } else {
+        return state;
+    }
+};
+
+const store = Redux.createStore(reducer);
+
+const loginAction = () => {
+    return {
+        type: 'LOGIN'
+    }
+};
+
+let action = store.dispatch(loginAction());
+
+
+console.log(store.getState());
+*/}
+
+{/*Use a Switch Statement to Handle Multiple Actions*/}
 
