@@ -1465,4 +1465,15 @@ let store = Redux.createStore(reducer);
 */}
 
 {/*Get State from the Redux Store*/}
+{/*
+const store = Redux.createStore(
+    (state = 5) => state
+);
+
+let currentState = store.getState();
+
+console.log(currentState);
+*/}
+
+{/*Define a Redux Action*/}
 
