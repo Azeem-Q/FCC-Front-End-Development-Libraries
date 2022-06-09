@@ -1620,3 +1620,28 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Register a Store Listener*/}
+
+var ADD = 'ADD';
+
+var reducer = function reducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case ADD:
+            return state + 1;
+        default:
+            return state;
+    }
+};
+
+var store = Redux.createStore(reducer);
+
+var count = 0;
+
+store.dispatch({ type: ADD });
+console.log(count);
+store.dispatch({ tpye: ADD });
+console.log(count);
+store.dispatch({ type: ADD });
+console.log(count);
