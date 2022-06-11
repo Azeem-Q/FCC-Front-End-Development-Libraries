@@ -1621,7 +1621,7 @@ const logoutUser = () => {
 */}
 
 {/*Register a Store Listener*/}
-
+{/*
 const ADD = 'ADD';
 
 const reducer = (state = 0, action) => {
@@ -1637,9 +1637,15 @@ const store = Redux.createStore(reducer);
 
 let count = 0;
 
+store.subscribe(() => {count += 1});
+
 store.dispatch({type: ADD});
 console.log(count);
-store.dispatch({tpye: ADD});
+store.dispatch({type: ADD});
 console.log(count);
 store.dispatch({type: ADD});
 console.log(count);
+*/}
+
+{/*Combine Multiple Reducers*/}
+

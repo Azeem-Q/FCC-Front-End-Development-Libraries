@@ -1620,28 +1620,30 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Register a Store Listener*/}
+{/*
+    const ADD = 'ADD';
+    
+    const reducer = (state = 0, action) => {
+       switch (action.type) {
+           case ADD:
+               return state + 1;
+           default:
+               return state;
+       }
+    };
+    
+    const store = Redux.createStore(reducer);
+    
+    let count = 0;
+    
+    store.subscribe(() => {count += 1});
+    
+    store.dispatch({type: ADD});
+    console.log(count);
+    store.dispatch({type: ADD});
+    console.log(count);
+    store.dispatch({type: ADD});
+    console.log(count);
+    */}
 
-var ADD = 'ADD';
-
-var reducer = function reducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-    var action = arguments[1];
-
-    switch (action.type) {
-        case ADD:
-            return state + 1;
-        default:
-            return state;
-    }
-};
-
-var store = Redux.createStore(reducer);
-
-var count = 0;
-
-store.dispatch({ type: ADD });
-console.log(count);
-store.dispatch({ tpye: ADD });
-console.log(count);
-store.dispatch({ type: ADD });
-console.log(count);
+{/*Combine Multiple Reducers*/}
