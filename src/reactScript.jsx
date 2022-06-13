@@ -1699,7 +1699,7 @@ console.log(store.getState());
 */}
 
 {/*Send Action Data to the Store*/}
-
+{/*
 const ADD_NOTE = 'ADD_NOTE';
 
 const notesReducer = (state = 'Initial State', action) => {
@@ -1718,8 +1718,13 @@ const addNoteText = (note) => {
     };
 };
 
-const store = Redux.createStore(notesReducer());
+const store = Redux.createStore(notesReducer);
 
 console.log(store.getState());
 store.dispatch(addNoteText('Hello!'));
 console.log(store.getState());
+*/}
+
+{/*Use Middleware to Handle Asynchronous Actions*/}
+
+

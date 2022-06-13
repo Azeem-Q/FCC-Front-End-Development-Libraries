@@ -1698,30 +1698,30 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Send Action Data to the Store*/}
-
-var ADD_NOTE = 'ADD_NOTE';
-
-var notesReducer = function notesReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Initial State';
-    var action = arguments[1];
-
-    switch (action.type) {
-        case ADD_NOTE:
-            return action.text;
-        default:
-            return state;
-    }
-};
-
-var addNoteText = function addNoteText(note) {
-    return {
-        type: ADD_NOTE,
-        text: note
+{/*
+    const ADD_NOTE = 'ADD_NOTE';
+    
+    const notesReducer = (state = 'Initial State', action) => {
+       switch(action.type) {
+           case ADD_NOTE:
+               return action.text;
+           default:
+               return state;
+       }
     };
-};
+    
+    const addNoteText = (note) => {
+       return {
+           type: ADD_NOTE,
+           text: note
+       };
+    };
+    
+    const store = Redux.createStore(notesReducer);
+    
+    console.log(store.getState());
+    store.dispatch(addNoteText('Hello!'));
+    console.log(store.getState());
+    */}
 
-var store = Redux.createStore(notesReducer());
-
-console.log(store.getState());
-store.dispatch(addNoteText('Hello!'));
-console.log(store.getState());
+{/*Use Middleware to Handle Asynchronous Actions*/}
