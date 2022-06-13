@@ -1725,3 +1725,58 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Use Middleware to Handle Asynchronous Actions*/}
+
+var REQUESTING_DATA = 'REQUESTING_DATA';
+var RECEIVED_DATA = 'RECEIVED_DATA';
+
+var requestingData = function requestingData() {
+    return {
+        type: REQUESTING_DATA
+    };
+};
+
+var receivedData = function receivedData(data) {
+    return {
+        type: RECEIVED_DATA,
+        users: data.users
+    };
+};
+
+var handleAsync = function handleAsync() {
+    return function (dispatch) {
+        dispatch(requestingData());
+        setTimeout(function () {
+            var data = {
+                users: ['Jeff', 'William', 'Alice']
+            };
+        }, 2500);
+        dispatch(receivedData(setTimeout));
+    };
+};
+
+var defaultState = {
+    fetching: false,
+    users: []
+};
+
+var asyncDataReducer = function asyncDataReducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+    var action = arguments[1];
+
+    switch (action.type) {
+        case REQUESTING_DATA:
+            return {
+                fetching: true,
+                users: []
+            };
+        case RECEIVED_DATA:
+            return {
+                fetching: false,
+                users: action.users
+            };
+        default:
+            return state;
+    }
+};
+
+var store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
