@@ -1749,8 +1749,8 @@ var handleAsync = function handleAsync() {
             var data = {
                 users: ['Jeff', 'William', 'Alice']
             };
+            dispatch(receivedData(data));
         }, 2500);
-        dispatch(receivedData(setTimeout));
     };
 };
 
@@ -1780,3 +1780,5 @@ var asyncDataReducer = function asyncDataReducer() {
 };
 
 var store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
+
+console.log(store.getState());

@@ -1750,8 +1750,8 @@ const handleAsync = () => {
             let data = {
                 users: ['Jeff', 'William', 'Alice']
             };
+            dispatch(receivedData(data));
         }, 2500);
-        dispatch(receivedData(setTimeout));
     }
 };
 
@@ -1778,4 +1778,6 @@ const asyncDataReducer = (state = defaultState, action) => {
 };
 
 const store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
+
+console.log(store.getState());
 
