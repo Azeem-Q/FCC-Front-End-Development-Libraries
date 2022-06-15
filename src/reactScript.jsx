@@ -1726,7 +1726,7 @@ console.log(store.getState());
 */}
 
 {/*Use Middleware to Handle Asynchronous Actions*/}
-
+{/*
 const REQUESTING_DATA = 'REQUESTING_DATA';
 const RECEIVED_DATA = 'RECEIVED_DATA';
 
@@ -1780,4 +1780,46 @@ const asyncDataReducer = (state = defaultState, action) => {
 const store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
 
 console.log(store.getState());
+*/}
+
+{/*Write a Counter with Redux*/}
+{/*
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return state + 1;
+        case DECREMENT:
+            return state - 1;
+        default:
+            return state;
+    }
+};
+
+const incAction = () => {
+    return {
+        type: INCREMENT
+    };
+};
+
+const decAction = () => {
+    return {
+        type: DECREMENT
+    };
+};
+
+const store = Redux.createStore(counterReducer);
+
+console.log(store.getState());
+store.dispatch(incAction());
+console.log(store.getState());
+store.dispatch(incAction());
+console.log(store.getState());
+store.dispatch(decAction());
+console.log(store.getState());
+*/}
+
+{/*Never Mutate State*/}
 

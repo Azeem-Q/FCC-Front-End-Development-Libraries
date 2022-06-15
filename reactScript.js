@@ -1725,60 +1725,99 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Use Middleware to Handle Asynchronous Actions*/}
-
-var REQUESTING_DATA = 'REQUESTING_DATA';
-var RECEIVED_DATA = 'RECEIVED_DATA';
-
-var requestingData = function requestingData() {
-    return {
-        type: REQUESTING_DATA
+{/*
+    const REQUESTING_DATA = 'REQUESTING_DATA';
+    const RECEIVED_DATA = 'RECEIVED_DATA';
+    
+    const requestingData = () => {
+       return {
+           type: REQUESTING_DATA
+       };
     };
-};
-
-var receivedData = function receivedData(data) {
-    return {
-        type: RECEIVED_DATA,
-        users: data.users
+    
+    const receivedData = (data) => {
+       return {
+           type: RECEIVED_DATA,
+           users: data.users
+       };
     };
-};
-
-var handleAsync = function handleAsync() {
-    return function (dispatch) {
-        dispatch(requestingData());
-        setTimeout(function () {
-            var data = {
-                users: ['Jeff', 'William', 'Alice']
-            };
-            dispatch(receivedData(data));
-        }, 2500);
+    
+    const handleAsync = () => {
+       return function(dispatch) {
+           dispatch(requestingData());
+           setTimeout(function() {
+               let data = {
+                   users: ['Jeff', 'William', 'Alice']
+               };
+               dispatch(receivedData(data));
+           }, 2500);
+       }
     };
-};
+    
+    const defaultState = {
+       fetching: false,
+       users: []
+    };
+    
+    const asyncDataReducer = (state = defaultState, action) => {
+       switch(action.type) {
+           case REQUESTING_DATA:
+               return {
+                   fetching: true,
+                   users: []
+               };
+           case RECEIVED_DATA:
+               return {
+                   fetching: false,
+                   users: action.users
+               };
+           default:
+               return state;
+       }
+    };
+    
+    const store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
+    
+    console.log(store.getState());
+    */}
 
-var defaultState = {
-    fetching: false,
-    users: []
-};
+{/*Write a Counter with Redux*/}
+{/*
+    const INCREMENT = 'INCREMENT';
+    const DECREMENT = 'DECREMENT';
+    
+    const counterReducer = (state = 0, action) => {
+       switch (action.type) {
+           case INCREMENT:
+               return state + 1;
+           case DECREMENT:
+               return state - 1;
+           default:
+               return state;
+       }
+    };
+    
+    const incAction = () => {
+       return {
+           type: INCREMENT
+       };
+    };
+    
+    const decAction = () => {
+       return {
+           type: DECREMENT
+       };
+    };
+    
+    const store = Redux.createStore(counterReducer);
+    
+    console.log(store.getState());
+    store.dispatch(incAction());
+    console.log(store.getState());
+    store.dispatch(incAction());
+    console.log(store.getState());
+    store.dispatch(decAction());
+    console.log(store.getState());
+    */}
 
-var asyncDataReducer = function asyncDataReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
-    var action = arguments[1];
-
-    switch (action.type) {
-        case REQUESTING_DATA:
-            return {
-                fetching: true,
-                users: []
-            };
-        case RECEIVED_DATA:
-            return {
-                fetching: false,
-                users: action.users
-            };
-        default:
-            return state;
-    }
-};
-
-var store = Redux.createStore(asyncDataReducer, Redux.applyMiddleware(ReduxThunk.default));
-
-console.log(store.getState());
+{/*Never Mutate State*/}
