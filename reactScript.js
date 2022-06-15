@@ -1,3 +1,5 @@
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 {} /*
    const { string } = require("prop-types");
    */
@@ -1876,3 +1878,28 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Remove an Item from an Array*/}
+
+var immutableReducer = function immutableReducer() {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [0, 1, 2, 3, 4, 5];
+    var action = arguments[1];
+
+    switch (action.type) {
+        case 'REMOVE_ITEM':
+            return [].concat(_toConsumableArray(state)).splice(action.index, 1);
+        default:
+            return state;
+    }
+};
+
+var removeItem = function removeItem(index) {
+    return {
+        type: 'REMOVE_ITEM',
+        index: index
+    };
+};
+
+var store = Redux.createStore(immutableReducer);
+
+console.log(store.getState());
+store.dispatch(removeItem(2));
+console.log(store.getState());
