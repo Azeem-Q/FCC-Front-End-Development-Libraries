@@ -1903,3 +1903,36 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Copy an Object with Object.assign*/}
+{/*
+    const defaultState = {
+       user: 'CamperBot',
+       status: 'offline',
+       friends: '732,982',
+       community: 'freeCodeCamp'
+    };
+    
+    const immutableReducer = (state = defaultState, actoin) => {
+       switch(actoin.type) {
+           case 'ONLINE':
+               return Object.assign({}, state, {status: 'online'});
+           default:
+               return state;
+       }
+    };
+    
+    const wakeUp = () => {
+       return {
+           type: 'ONLINE'
+       };
+    };
+    
+    const store = Redux.createStore(immutableReducer);
+    
+    console.log(store.getState());
+    store.dispatch(wakeUp());
+    console.log(store.getState());
+    */}
+
+{/*React and Redux*/}
+
+{/*Getting Started with React Redux*/}
