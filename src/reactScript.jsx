@@ -1953,4 +1953,45 @@ class DisplayMessages extends React.Component {
 */}
 
 {/*Manage State Locally First*/}
+{/*
+class DisplayMessages extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: '',
+            messages: []
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.submitMessage = this.submitMessage.bind(this);
+    }
+    handleChange(e) {
+        this.setState({
+            input: e.target.value
+        });
+    }
+    submitMessage() {
+        this.setState(state => ({
+            messages: this.state.messages.concat(this.state.input),
+            input: ''
+        }));
+    }
+    render() {
+        let msgs = this.state.messages.map(a => {
+            return <li>{a}</li>;
+        })
+        return (
+            <div>
+                <h2>Type in a new Message:</h2>
+                <input type="text" value={this.state.input} onChange={this.handleChange} />
+                <button onClick={this.submitMessage}>Submit!</button>
+                <ul>{msgs}</ul>
+            </div>
+        );
+    }
+};
+
+ReactDOM.render(<DisplayMessages />, document.getElementById('challenge-node'));
+*/}
+
+{/*Extract State Logic to Redux*/}
 
