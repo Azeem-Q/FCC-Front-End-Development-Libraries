@@ -1877,11 +1877,13 @@ const store = Redux.createStore(immutableReducer);
 */}
 
 {/*Remove an Item from an Array*/}
-
+{/*
 const immutableReducer = (state = [0, 1, 2, 3, 4, 5], action) => {
     switch(action.type) {
         case 'REMOVE_ITEM':
-            return [...state].splice(action.index, 1);
+            return state.filter(a => {
+                return state.indexOf(a) != action.index
+            });
         default:
             return state;
     }
@@ -1897,5 +1899,9 @@ const removeItem = (index) => {
 const store = Redux.createStore(immutableReducer);
 
 console.log(store.getState());
-store.dispatch(removeItem(2));
+store.dispatch(removeItem(3));
 console.log(store.getState());
+*/}
+
+{/*Copy an Object with Object.assign*/}
+
