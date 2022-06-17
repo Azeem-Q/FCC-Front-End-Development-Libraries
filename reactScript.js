@@ -2099,3 +2099,7 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Map State to Props*/}
+
+var state = [];
+
+var mapStateToProps = function mapStateToProps(state) {};

@@ -2101,3 +2101,6 @@ ReactDOM.render(<AppWrapper />, document.getElementById('challenge-node'));
 
 {/*Map State to Props*/}
 
+const state = [];
+
+const mapStateToProps = (state) => {}
