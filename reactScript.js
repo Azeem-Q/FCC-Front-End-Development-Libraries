@@ -1993,3 +1993,27 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Extract State Logic to Redux*/}
+{/*
+    const ADD = 'ADD';
+    
+    const addMessage = (message) => {
+       return {
+           type: ADD,
+           message
+       };
+    };
+    
+    
+    const messageReducer = (state = [], action) => {
+       switch(action.type) {
+           case ADD:
+               return [...state, action.message];
+           default:
+               return state;
+       }
+    };
+    
+    const store = Redux.createStore(messageReducer);
+    */}
+
+{/*Use Provider to Connect Redux to React*/}
