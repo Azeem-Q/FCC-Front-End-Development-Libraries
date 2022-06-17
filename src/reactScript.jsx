@@ -2100,7 +2100,15 @@ ReactDOM.render(<AppWrapper />, document.getElementById('challenge-node'));
 */}
 
 {/*Map State to Props*/}
-
+{/*
 const state = [];
 
-const mapStateToProps = (state) => {}
+const mapStateToProps = (state) => {
+    return {
+        messages: state
+    };
+}
+*/}
+
+{/*Map Dispatch to Props*/}
+

@@ -2099,7 +2099,14 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Map State to Props*/}
+{/*
+    const state = [];
+    
+    const mapStateToProps = (state) => {
+       return {
+           messages: state
+       };
+    }
+    */}
 
-var state = [];
-
-var mapStateToProps = function mapStateToProps(state) {};
+{/*Map Dispatch to Props*/}
