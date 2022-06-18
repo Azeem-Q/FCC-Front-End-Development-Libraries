@@ -1,3 +1,5 @@
+const { connect } = require("react-redux");
+
 {/*
 const { string } = require("prop-types");
 */}
@@ -2111,4 +2113,24 @@ const mapStateToProps = (state) => {
 */}
 
 {/*Map Dispatch to Props*/}
+{/*
+const addMessage = (message) => {
+    return {
+        type: 'ADD',
+        message: message
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        submitNewMessage: (message) => {
+            dispatch(addMessage(message))
+        }
+    };
+};
+
+console.log(mapDispatchToProps(addMessage('asd')));
+*/}
+
+{/*Connect Redux to React*/}
 
