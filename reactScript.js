@@ -1,13 +1,6 @@
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
+{/*
+    const { default: thunk } = require("redux-thunk");
+    */}
 {/*
     const { connect } = require("react-redux");
     */}
@@ -2180,135 +2173,192 @@ ReactDOM.render(JSX, document.getElementById('root'));
     */}
 
 {/*Connect Redux to the Messages App*/}
-
-var ADD = 'ADD';
-
-var addMessage = function addMessage(message) {
-    return {
-        type: ADD,
-        message: message
+{/*
+    const ADD = 'ADD';
+    
+    const addMessage = (message) => {
+       return {
+           type: ADD,
+           message: message
+       };
     };
-};
-
-var messageReducer = function messageReducer() {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var action = arguments[1];
-
-    switch (action.type) {
-        case ADD:
-            return [].concat(_toConsumableArray(state), [action.message]);
-        default:
-            return state;
-    }
-};
-
-var store = Redux.createStore(messageReducer);
-
-var Presentational = function (_React$Component) {
-    _inherits(Presentational, _React$Component);
-
-    function Presentational(props) {
-        _classCallCheck(this, Presentational);
-
-        var _this = _possibleConstructorReturn(this, (Presentational.__proto__ || Object.getPrototypeOf(Presentational)).call(this, props));
-
-        _this.state = {
-            input: '',
-            messages: []
-        };
-        _this.handleChange = _this.handleChange.bind(_this);
-        _this.submitMessage = _this.submitMessage.bind(_this);
-        return _this;
-    }
-
-    _createClass(Presentational, [{
-        key: 'handleChange',
-        value: function handleChange(event) {
-            this.setState({
-                input: event.target.value
-            });
-        }
-    }, {
-        key: 'submitMessage',
-        value: function submitMessage() {
-            this.setState(function (state) {
-                var currentMessage = state.input;
-                return {
-                    input: '',
-                    messages: state.messages.concat(currentMessage)
-                };
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'h2',
-                    null,
-                    'Type in a new Message'
-                ),
-                React.createElement('input', { value: this.state.input, onChange: this.handleChange }),
-                React.createElement('br', null),
-                React.createElement(
-                    'button',
-                    { onClick: this.submitMessage },
-                    'Submit'
-                ),
-                React.createElement(
-                    'ul',
-                    null,
-                    this.state.messages.map(function (message, idx) {
-                        return React.createElement(
-                            'li',
-                            { key: idx },
-                            message
-                        );
-                    })
-                )
-            );
-        }
-    }]);
-
-    return Presentational;
-}(React.Component);
-
-;
-
-var mapStateToProps = function mapStateToProps(state) {
-    return { messages: state };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-    return {
-        submitNewMessage: function submitNewMessage(newMessage) {
-            dispatch(addMessage(newMessage));
-        }
+    
+    const messageReducer = (state = [], action) => {
+       switch (action.type) {
+           case ADD:
+               return [...state, action.message];
+           default:
+               return state;
+       }
     };
-};
+    
+    const store = Redux.createStore(messageReducer);
+    
+    class Presentational extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               input: '',
+               messages: []
+           }
+           this.handleChange = this.handleChange.bind(this);
+           this.submitMessage = this.submitMessage.bind(this);
+       }
+       handleChange(event) {
+           this.setState({
+               input: event.target.value
+           });
+       }
+       submitMessage() {
+           this.setState((state) => {
+               const currentMessage = state.input;
+               return {
+                   input: '',
+                   messages: state.messages.concat(currentMessage)
+               };
+           });
+       }
+       render() {
+           return (
+               <div>
+                   <h2>Type in a new Message</h2>
+                   <input value={this.state.input} onChange={this.handleChange} />
+                   <br />
+                   <button onClick={this.submitMessage}>Submit</button>
+                   <ul>
+                       {this.state.messages.map((message, idx) => {
+                           return (
+                               <li key={idx}>{message}</li>
+                           )
+                       })}
+                   </ul>
+               </div>
+           );
+       }
+    };
+    
+    const mapStateToProps = (state) => {
+       return {messages: state};
+    };
+    
+    const mapDispatchToProps = (dispatch) => {
+       return {
+           submitNewMessage: (newMessage) => {
+               dispatch(addMessage(newMessage))
+           }
+       }
+    };
+    
+    const Provider = ReactRedux.Provider;
+    const connect = ReactRedux.connect;
+    
+    const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+    
+    class AppWrapper extends React.Component {
+       constructor(props) {
+           super(props);
+       }
+       render() {
+           return (
+               <Provider store={store}>
+                   <Container />
+               </Provider>
+           );
+       }
+    };
+    
+    ReactDOM.render(<AppWrapper />, document.getElementById('challenge-node'));
+    */}
 
-var Provider = ReactRedux.Provider;
-var connect = ReactRedux.connect;
+{/*Extract Local State into Redux*/}
+{/*
+    const ADD = 'ADD';
+    
+    const addMessage = (message) => {
+       return {
+           type: ADD,
+           message: message
+       };
+    };
+    
+    const messageReducer = (state = [], action) => {
+       switch (action.type) {
+           case ADD:
+               return [...state, action.message];
+           default:
+               return state;
+       }
+    };
+    
+    const store = Redux.createStore(messageReducer);
+    
+    const Provider = ReactRedux.Provider;
+    const connect = ReactRedux.connect;
+    
+    class Presentational extends React.Component {
+       constructor(props) {
+           super(props);
+           this.state = {
+               input: '',
+           }
+           this.handleChange = this.handleChange.bind(this);
+           this.submitMessage = this.submitMessage.bind(this);
+       }
+       handleChange(event) {
+           this.setState({
+               input: event.target.value
+           });
+       }
+       submitMessage() {
+           this.props.submitNewMessage(this.state.input);
+           this.setState((state) => ({
+               input: ''
+           }));
+       }
+       render() {
+           return (
+               <div>
+                   <h2>Type in a new Message:</h2>
+                   <input value={this.state.input} onChange={this.handleChange} />
+                   <br />
+                   <button onClick={this.submitMessage}>Submit</button>
+                   <ul>
+                       {this.props.messages.map((message, idx) => {
+                           return (
+                               <li key={idx}>{message}</li>
+                           )
+                       })}
+                   </ul>
+               </div>
+           );
+       }
+    };
+    
+    const mapStateToProps = (state) => {
+       return {messages: state};
+    };
+    
+    const mapDispatchToProps = (dispatch) => {
+       return {
+           submitNewMessage: (message) => {
+               dispatch(addMessage(message))
+           }
+       };
+    };
+    
+    const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+    
+    class AppWrapper extends React.Component {
+       render() {
+           return (
+               <Provider store={store}>
+                   <Container />
+               </Provider>
+           );
+       }
+    };
+    
+    ReactDOM.render(<AppWrapper />, document.getElementById('challenge-node'));
+    */}
 
-var AppWrapper = function (_React$Component2) {
-    _inherits(AppWrapper, _React$Component2);
-
-    function AppWrapper(props) {
-        _classCallCheck(this, AppWrapper);
-
-        return _possibleConstructorReturn(this, (AppWrapper.__proto__ || Object.getPrototypeOf(AppWrapper)).call(this, props));
-    }
-
-    _createClass(AppWrapper, [{
-        key: 'render',
-        value: function render() {
-            return null;
-        }
-    }]);
-
-    return AppWrapper;
-}(React.Component);
-
-;
+{/*Moving Forward From Here*/}
